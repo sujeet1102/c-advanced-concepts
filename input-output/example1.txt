@@ -1,0 +1,2 @@
+This is an example file.
+Using getc() to read its contents.

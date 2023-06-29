@@ -1,0 +1,2 @@
+Another example file.
+Using fgetc() to read its contents.
