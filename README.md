@@ -7,4 +7,4 @@ The topics include:
 - advanced debugging, compiler options, static libraries, data structures.
 - interprocess communication, threads, sockets.
 
-*Notes by me have been added*
+*Notes by me have been added.*
