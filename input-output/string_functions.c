@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
 getline()
@@ -55,6 +56,11 @@ int main() {
 
     free(fileLine);
     fclose(file);
+
+    char string[40];
+
+    strcpy(string, "hello! good day.");
+    puts(string);
 
     return 0;
 }
