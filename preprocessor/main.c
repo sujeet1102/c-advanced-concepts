@@ -71,12 +71,49 @@ Syntax:
 ------------------------------------------------------------------------------------------------------------------------------------------------------->
 */
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-int main(void) {
-    
-    
+#define CASE2
+
+#ifdef CASE1
+    #define MESSAGE "CASE1 is defined"
+#elif defined(CASE2)
+    #define MESSAGE "CASE2 is defined"
+#else
+    #define MESSAGE "Neither CASE1 nor CASE2 is defined"
+#endif
+
+#ifndef DEBUG
+    #define DEBUG_ENABLED 0
+#else
+    #define DEBUG_ENABLED 1
+#endif
+
+#if DEBUG_ENABLED
+    #pragma message ("Debug mode is enabled")
+#endif
+
+#if 10 > 5
+    #define CONDITION_MET 1
+#else
+    #define CONDITION_MET 0
+#endif
+
+int main() {
+    printf("Message: %s\n", MESSAGE);
+
+    #ifdef DEBUG
+        printf("Debug mode is enabled.\n");
+    #else
+        printf("Debug mode is disabled.\n");
+    #endif
+
+    #if CONDITION_MET
+        printf("Condition is met.\n");
+    #else
+        printf("Condition is not met.\n");
+    #endif
 
     return 0;
 }
