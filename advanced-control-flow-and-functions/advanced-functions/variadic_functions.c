@@ -12,16 +12,22 @@ it has two parts
 - mandatory arguments (atleast 1 and first one in order)
 - optional arguments
 
-va_list
-- when we need to access optional parameters and it is an argument list.
-va_start
-- will connect argument list to certail argument pointer. list in va_list is first argument, seconf argument is last fixed parameter.
-va_arg
-- will fetch the current argument connected to the argument list.
-va_end
-- when we want to stop using variable argument list.
-va_copy
-- situations we need to save our current location.
+va_list: va_list is a type used to hold the information required to retrieve the optional arguments in a variadic function.
+
+va_start: The va_start macro is used to initialize the va_list type variable. It takes two arguments:
+    va_list ap: The va_list variable that will be initialized.
+    last_arg: The last fixed parameter before the optional arguments.
+
+va_arg: The va_arg macro is used to fetch the current argument of the given type from the va_list. It takes two arguments:
+    va_list ap: The va_list variable from which the argument will be fetched.
+    type: The type of the argument to be fetched.
+
+va_end: The va_end macro is used to clean up the va_list variable after all the optional arguments have been accessed. It takes one argument:
+    va_list ap: The va_list variable to be cleaned up.
+
+va_copy: The va_copy macro is used to create a copy of a va_list variable. It takes two arguments:
+    dest: The va_list variable that will hold the copy.
+    src: The original va_list variable to be copied.
 
 int f1(int n,...);
 */
