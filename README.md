@@ -1,6 +1,6 @@
 # c-advanced-concepts
 
-This repository contains programs related to advanced C programming concepts.
+This repository contains codes related to advanced C programming concepts.
 The topics include:
 - storage classes, advanced data types, type qualifiers, bit manipulation.
 - advanced control flow & function concepts, unions, preprocessor & macros.
