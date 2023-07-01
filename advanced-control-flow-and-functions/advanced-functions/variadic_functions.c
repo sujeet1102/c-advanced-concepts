@@ -26,9 +26,36 @@ va_copy
 int f1(int n,...);
 */
 
+double calculateAverage(int num, ...)
+{
+    va_list arguments, arguments_copy;
+    double sum = 0.0;
+    int count = 0;
+    
+    // Initialize the argument list
+    va_start(arguments, num);
+    
+    // Make a copy of the argument list
+    va_copy(arguments_copy, arguments);
+    
+    // Accessing the arguments using va_arg and calculating the sum
+    for (int i = 0; i < num; i++) {
+        sum += va_arg(arguments, int);
+        count++;
+    }
+    
+    // Clean up the argument lists
+    va_end(arguments);
+    va_end(arguments_copy);
+    
+    // Return the average
+    return sum / count;
+}
+
 int main(void) {
     
-    
+    double average = calculateAverage(5, 10, 20, 30, 40, 50);
+    printf("Average: %.2f\n", average);
 
     return 0;
 }
